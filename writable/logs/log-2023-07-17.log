@@ -1,0 +1,9 @@
+CRITICAL - 2023-07-17 14:37:19 --> Undefined variable $tempPath
+in APPPATH\Models\UploadModel.php on line 166.
+ 1 APPPATH\Models\UploadModel.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tempPath', 'C:\\webgalaxy\\htdocs\\itinpakistan\\app\\Models\\UploadModel.php', 166)
+ 2 APPPATH\Models\ProfileModel.php(29): App\Models\UploadModel->uploadCoverImage('1', 'uploads/tmp/temp_64b50bcbb6a6b7-96369354.png')
+ 3 APPPATH\Controllers\ProfileController.php(118): App\Models\ProfileModel->editProfile([...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ProfileController->editProfilePost()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(77): CodeIgniter\CodeIgniter->run()

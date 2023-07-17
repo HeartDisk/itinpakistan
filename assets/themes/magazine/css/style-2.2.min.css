@@ -3594,6 +3594,7 @@ div#amplitude-right div.song div.song-meta-data {
 .footer-copyright .nav-footer ul li a {
   color: #FFF;
   font-size: 12px;
+  letter-spacing: 1px;
 }
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
