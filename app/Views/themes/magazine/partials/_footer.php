@@ -8,7 +8,9 @@
                             <img src="<?= getLogoFooter(); ?>" alt="logo" class="logo" width="240" height="90">
                         </div>
                         <div class="footer-about">
-                            <?= esc($baseSettings->about_footer); ?>
+                            <?= esc($baseSettings->about_footer); ?><br>
+                            Email us @  <?= esc($baseSettings->contact_email); ?><br>
+                            <?= esc($baseSettings->contact_phone); ?><br>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 footer-widget">
