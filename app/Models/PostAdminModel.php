@@ -18,16 +18,25 @@ class PostAdminModel extends BaseModel
         $this->builderPostAudios = $this->db->table('post_audios');
     }
 
+    public function str_replace_first($search, $replace, $subject)
+        {
+            $search = '/'.preg_quote($search, '/').'/';
+            return preg_replace($search, $replace, $subject, 1);
+        }
+
     //input values
     public function inputValues()
     {
+        $keywords = explode(",",inputPost('keywords'));
+        $replaceString = '<a class="externallink" href="https://www.itinpakistan.com/">'.$keywords[0].'</a>';
+        $content = $this->str_replace_first($keywords[0],$replaceString,inputPost('content'));
         return [
             'lang_id' => inputPost('lang_id'),
             'title' => inputPost('title'),
             'title_slug' => inputPost('title_slug'),
             'summary' => inputPost('summary'),
             'category_id' => inputPost('category_id'),
-            'content' => inputPost('content'),
+            'content' => $content,
             'optional_url' => inputPost('optional_url'),
             'need_auth' => inputPost('need_auth'),
             'is_slider' => inputPost('is_slider'),
@@ -37,6 +46,7 @@ class PostAdminModel extends BaseModel
             'visibility' => inputPost('visibility'),
             'show_right_column' => inputPost('show_right_column'),
             'keywords' => inputPost('keywords'),
+            'confirm' => inputPost('confirm'),
             'image_description' => inputPost('image_description')
         ];
     }

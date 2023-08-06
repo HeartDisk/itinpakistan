@@ -86,6 +86,7 @@ class PostController extends BaseAdminController
         $postType = inputPost('post_type');
         $val = \Config\Services::validation();
         $val->setRule('title', trans("title"), 'required|max_length[500]');
+        $val->setRule('content', trans("content"), 'required|min_length[800]');
         $val->setRule('category_id', trans("category"), 'required');
         $val->setRule('optional_url', trans("cateoptional_urlgory"), 'max_length[1000]');
         if (!$this->validate(getValRules($val))) {

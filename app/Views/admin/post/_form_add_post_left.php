@@ -17,12 +17,12 @@
 
         <div class="form-group">
             <label class="control-label"><?= trans('summary'); ?> & <?= trans("description"); ?> (<?= trans('meta_tag'); ?>)</label>
-            <textarea class="form-control text-area" name="summary" placeholder="<?= trans('summary'); ?> & <?= trans("description"); ?> (<?= trans('meta_tag'); ?>)"><?= old('summary'); ?></textarea>
+            <textarea required class="form-control text-area" name="summary" placeholder="<?= trans('summary'); ?> & <?= trans("description"); ?> (<?= trans('meta_tag'); ?>)"><?= old('summary'); ?></textarea>
         </div>
 
         <div class="form-group">
-            <label class="control-label"><?= trans('keywords'); ?> (<?= trans('meta_tag'); ?>)</label>
-            <input type="text" class="form-control" name="keywords" placeholder="<?= trans('keywords'); ?> (<?= trans('meta_tag'); ?>)" value="<?= old('keywords'); ?>">
+            <label class="control-label"><?= trans('keywords'); ?> (<?= trans('meta_tag'); ?>)  <span class="badge badge-danger">atleast 3 keywords</span></label>
+            <input required type="text" class="form-control" name="keywords" placeholder="<?= trans('keywords'); ?> (<?= trans('meta_tag'); ?>)" value="<?= old('keywords'); ?>">
         </div>
 
         <?php if (!empty($postType) && $postType == 'poll'): ?>
@@ -171,8 +171,8 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-sm-12">
-                    <label class="control-label"><?= trans('tags'); ?></label>
-                    <input id="tags_1" type="text" name="tags" class="form-control tags"/>
+                    <label class="control-label"><?= trans('tags'); ?> <span class="badge badge-danger">at least 3 tags</span></label>
+                    <input required id="tags_1" type="text" name="tags" class="form-control tags"/>
                     <small>(<?= trans('type_tag'); ?>)</small>
                 </div>
             </div>
