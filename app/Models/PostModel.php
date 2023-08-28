@@ -216,6 +216,11 @@ class PostModel extends BaseModel
         return $this->builder->where('posts.user_id', cleanNumber($userId))->countAllResults();
     }
 
+    public function getPostCountUsers($userid)
+    {
+        return $this->builder->where('posts.user_id', cleanNumber($userid))->countAllResults();
+    }
+
     //get paginated user posts
     public function getUserPostsPaginated($userId, $perPage, $offset)
     {

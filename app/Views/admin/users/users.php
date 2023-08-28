@@ -1,4 +1,7 @@
-<?php $authModel = new \App\Models\AuthModel(); ?>
+<?php 
+    $authModel = new \App\Models\AuthModel();
+    $pModel = new \App\Models\PostModel();
+?>
 <div class="row">
     <div class="col-sm-12">
         <?= view('admin/includes/_messages'); ?>
@@ -48,6 +51,9 @@
                                         <?php if ($user->reward_system_enabled == 1): ?>
                                             <p><label class="label bg-primary"><?= trans('reward_system'); ?></label></p>
                                         <?php endif; ?>
+                                        <?php
+                                               echo '<br><label class="label label-info">'.$pModel->getPostCountUsers($user->id).'</label>';
+                                        ?>
                                     </td>
                                     <td>
                                         <?= esc($user->email);

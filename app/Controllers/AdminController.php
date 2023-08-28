@@ -24,6 +24,7 @@ class AdminController extends BaseAdminController
     protected $authModel;
     protected $commonModel;
     protected $newsletterModel;
+    protected $pModel;
 
     public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
     {
@@ -34,6 +35,7 @@ class AdminController extends BaseAdminController
         $this->authModel = new AuthModel();
         $this->commonModel = new CommonModel();
         $this->newsletterModel = new NewsletterModel();
+        $this->pModel = new PostModel();
 
         if(checkCronTime(1)){
             //delete old posts
